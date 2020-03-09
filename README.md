@@ -28,7 +28,7 @@ Also update the `start` and `end` year values to the years you would like
 to archive.
 
 ## Requirements
-  `Python 3`
+* `Python 3`
 * `html2text`
 * `markdown`
 * `beautifulsoup4`
