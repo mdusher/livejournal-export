@@ -28,7 +28,7 @@ def fix_user_links(json):
         json['subject'] = USER.sub(r'\1', json['subject'])
 
     if 'body' in json:
-        json['body'] = USER.sub(r'\1', json['body'])
+        json['body'] = USER.sub(r'\1', str(json['body']))
 
 
 def json_to_html(json):
@@ -46,7 +46,7 @@ def json_to_html(json):
 
 
 def get_slug(json):
-    slug = json['subject']
+    slug = json['subject'].strip()
     if not len(slug):
         slug = json['id']
 
