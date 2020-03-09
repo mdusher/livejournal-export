@@ -10,7 +10,7 @@ from datetime import datetime
 from operator import itemgetter
 from download_posts import download_posts
 from download_comments import download_comments
-
+from config import skip_download
 
 TAG = re.compile(r'\[!\[(.*?)\]\(http:\/\/utx.ambience.ru\/img\/.*?\)\]\(.*?\)')
 USER = re.compile(r'<lj user="?(.*?)"?>')
@@ -190,7 +190,7 @@ def combine(all_posts, all_comments):
 
 
 if __name__ == '__main__':
-    if True:
+    if skip_download == False:
         all_posts = download_posts()
         all_comments = download_comments()
 

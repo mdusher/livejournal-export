@@ -13,3 +13,5 @@ cookies = {
 headers = {
     'User-Agent': 'https://github.com/arty-name/livejournal-export; me@arty.name'
 }
+
+skip_download: False
