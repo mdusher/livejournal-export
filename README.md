@@ -20,11 +20,14 @@ necessary to [generate a static blog with Pelican](http://docs.getpelican.com/).
 `posts-json` will contain posts with nested comments 
 in JSON format should you want to process them further.
 
-## auth.py
+## config.py
 
 First of all you will have to log into Livejournal 
 and copy values of cookies `ljloggedin` and `ljmastersession` 
 to the file auth.py.
+
+Also update the `start` and `end` year values to the years you would like
+to archive.
 
 ## download_posts.py
 

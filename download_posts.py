@@ -4,10 +4,14 @@ import json
 import os
 import requests
 import xml.etree.ElementTree as ET
-from auth import cookies, headers
+from config import cookies, headers, archive_years
 
+start_year = archive_years["start"] or 2000
+end_year = archive_years["end"] or 2010
 
-YEARS = range(2003, 2015)  # first to (last + 1)
+print("Archiving posts between", start_year, "and", end_year)
+
+YEARS = range(start_year, end_year+1)
 
 
 def fetch_month_posts(year, month):
@@ -60,6 +64,7 @@ def download_posts():
     xml_posts = []
     for year in YEARS:
         for month in range(1, 13):
+            print("Retrieving posts for: " + str(year) + "-" + str(month))
             xml = fetch_month_posts(year, month)
             xml_posts.extend(list(ET.fromstring(xml).iter('entry')))
 

@@ -4,7 +4,7 @@ import os
 import json
 import requests
 import xml.etree.ElementTree as ET
-from auth import cookies, headers
+from config import cookies, headers, archive_years
 
 
 def fetch_xml(params):
